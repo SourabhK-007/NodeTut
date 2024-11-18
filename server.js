@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const db = require('./db')
+require('dotenv').config();
 
 const personRoutes= require('../Node_2/Routes/PersonRoutes')
 const menuRoutes = require('../Node_2/Routes/menuRoutes')

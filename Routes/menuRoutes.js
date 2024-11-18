@@ -10,6 +10,7 @@ router.post('/',async (req, res) => {
       const newItem=new Menu(data)
       const responseData=await newItem.save();
       console.log("data saved")
+
       res.status(200).json(responseData)
   
     } catch (err) {
