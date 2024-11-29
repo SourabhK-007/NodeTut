@@ -49,6 +49,7 @@ router.post('/',async (req, res) => {
       console.log(err);
       res.status(500).json({error:"Internal server error"})
     }
+    console.log("getting person based on work-type")
   })
 
   //update
