@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const db = require('./db')
 require('dotenv').config();
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const personRoutes= require('./Routes/personRoutes.js')
 const menuRoutes = require('./Routes/menuRoutes.js')
