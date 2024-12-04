@@ -3,8 +3,8 @@ const app = express()
 const db = require('./db')
 require('dotenv').config();
 
-const personRoutes= require('../Node_2/Routes/personRoutes')
-const menuRoutes = require('../Node_2/Routes/menuRoutes')
+const personRoutes= require('./Routes/personRoutes.js')
+const menuRoutes = require('./Routes/menuRoutes.js')
 
 const bodyParser = require('body-parser');
 
@@ -26,4 +26,6 @@ app.get('/abc', function (req, res) {
 
 app.use('/person',personRoutes);
 app.use('/menu',menuRoutes);
-app.listen(3000)
+app.listen(3000,()=>{
+  console.log("Server listening in 3000")
+})
