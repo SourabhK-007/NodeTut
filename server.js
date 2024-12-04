@@ -3,7 +3,7 @@ const app = express()
 const db = require('./db')
 require('dotenv').config();
 
-const personRoutes= require('../Node_2/Routes/PersonRoutes')
+const personRoutes= require('../Node_2/Routes/personRoutes')
 const menuRoutes = require('../Node_2/Routes/menuRoutes')
 
 const bodyParser = require('body-parser');
