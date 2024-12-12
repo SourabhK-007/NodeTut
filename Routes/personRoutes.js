@@ -1,12 +1,20 @@
 const express= require('express');
 const router =  express.Router();
 const Person = require('./../Person')
+const db = require('../db')
 
 router.post('/',async (req, res) => {
 
     try {
   
       const data=req.body
+  
+      //check for existing email id (as email is unique)
+      const existing= await Person.find({email: data.email})
+      if (existing) {
+        return res.status(400).send({ error: "Email already exists" });
+      }
+
       const newPerson=new Person(data)
       const responseData=await newPerson.save();
       console.log("data saved")
