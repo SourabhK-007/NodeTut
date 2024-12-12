@@ -12,7 +12,9 @@ router.post('/',async (req, res) => {
       //check for existing email id (as email is unique)
       const existing= await Person.find({email: data.email})
       if (existing) {
+        console.log("email exists");
         return res.status(400).send({ error: "Email already exists" });
+       
       }
 
       const newPerson=new Person(data)
